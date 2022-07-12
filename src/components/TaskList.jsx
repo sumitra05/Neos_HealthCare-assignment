@@ -1,6 +1,7 @@
 import React , {useState} from 'react'
 import {v4 as uuid} from "uuid";
 import "./TaskList.css"
+import { Timer } from './Timer';
 
 const TaskList = () => {
     const [item, setItem] = useState("");
@@ -36,7 +37,8 @@ const TaskList = () => {
        {
            list.map(({items,key})=>
            <div key={key}>{items}
-             <button onClick={() =>del(key)}>Delete</button>
+             <button onClick={() =>del(key)}>completed</button>
+             <Timer/>
            </div>
            )
        }
